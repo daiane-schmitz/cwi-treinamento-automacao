@@ -1,10 +1,11 @@
 package tests;
 
 import org.hamcrest.CoreMatchers;
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import pageObjects.CategoryPage;
 import pageObjects.HomePage;
+import pageObjects.ProductPage;
 import pageObjects.SearchPage;
 import utils.Browser;
 import utils.Utils;
@@ -53,4 +54,39 @@ public class SetupTest extends BaseTests{
         assertEquals(search.getTextLighter().replace("\"", ""), quest);
         assertThat(search.getTextHeading_counter(), CoreMatchers.containsString(questResultQtd));
     }
+
+    @Test
+    public void testAcessCategoryTShirts(){
+        //Iniciar as páginas
+        HomePage home = new HomePage();
+        CategoryPage category = new CategoryPage();
+
+        //Clicar na categoria T-Shirts
+        home.clickCategoryTShirts();
+
+        //Validar se ao clicar na categoria T-Shirts ocorre o direcionamento correto
+        assertTrue(category.isPageTShirts());
+    }
+
+    @Test
+    public void testAddProductToProductPage(){
+        //Acessar a categoria T-Shirts
+        testAcessCategoryTShirts();
+
+        //Iniciar as páginas
+        CategoryPage category = new CategoryPage();
+        ProductPage pdp = new ProductPage();
+
+        //Salva nome do produto na página de categoria
+        String nameProductCategory = category.getProductNameCategory();
+
+        //Clicar em more e direcionar para a pasta do produto
+        category.clickProductAddToProductPage();
+
+        //Verificar se o produto está na página de detalhes do produto
+        assertTrue(pdp.getProductNamePDP().equals(nameProductCategory));
+
+
+    }
+
 }
