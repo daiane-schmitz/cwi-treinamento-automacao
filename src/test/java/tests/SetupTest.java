@@ -1,5 +1,6 @@
 package tests;
 
+import com.sun.xml.internal.ws.api.FeatureListValidatorAnnotation;
 import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -7,9 +8,8 @@ import pageObjects.*;
 import utils.Browser;
 import utils.Utils;
 
-import java.net.CacheRequest;
-
 import static org.junit.Assert.*;
+
 
 public class SetupTest extends BaseTests{
 
