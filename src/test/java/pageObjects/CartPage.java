@@ -10,7 +10,7 @@ public class CartPage extends CartPageElementMapper {
         PageFactory.initElements(Browser.getCurrentDriver(), this);
     }
 
-    public String getNameProductCart(){
+    public String getProductNameCart(){
         return productNameCart.getText();
     }
 
