@@ -5,6 +5,9 @@ import org.openqa.selenium.support.FindBy;
 
 public class RegisterPageElementMapper {
 
+    @FindBy(css = "#columns > div.breadcrumb.clearfix > span.navigation_page")
+    public WebElement authentication;
+
     @FindBy(id = "uniform-id_gender1")
     public WebElement genderMale;
 
@@ -35,6 +38,9 @@ public class RegisterPageElementMapper {
     @FindBy(id = "optin")
     public WebElement specialOffers;
 
+    @FindBy(id = "company")
+    public WebElement company;
+
     @FindBy(id = "address1")
     public WebElement address;
 
@@ -61,6 +67,9 @@ public class RegisterPageElementMapper {
 
     @FindBy(id = "phone_mobile")
     public WebElement phone_mobile;
+
+    @FindBy(id = "alias")
+    public WebElement addresAlias;
 
     @FindBy(id = "submitAccount")
     public WebElement btnRegister;

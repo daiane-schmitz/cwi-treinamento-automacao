@@ -28,7 +28,7 @@ public class LoginPage extends LoginPageElementMapper {
 
     @Step("Preencheu o e-mail para criar a conta")
     public void fillEmailCreateAcc(){
-        emailCreate.sendKeys("agf@yahoo.com.br");
+        emailCreate.sendKeys("agf5gf@yahoo.com.br");
     }
 
     @Step("Clicou em Create Account")
@@ -36,7 +36,4 @@ public class LoginPage extends LoginPageElementMapper {
         btnCreateAccount.click();
     }
 
-    public String getYourPersonalInformation(){
-        return yourPersonalInformation.getText();
-    }
 }

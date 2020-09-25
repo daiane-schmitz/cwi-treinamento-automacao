@@ -20,7 +20,4 @@ public class LoginPageElementMapper {
     @FindBy(id = "SubmitCreate")
     public WebElement btnCreateAccount;
 
-    @FindBy(css = "#account-creation_form > div:nth-child(1) > h3")
-    public WebElement yourPersonalInformation;
-
 }

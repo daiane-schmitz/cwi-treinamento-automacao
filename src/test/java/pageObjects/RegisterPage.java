@@ -10,6 +10,14 @@ public class RegisterPage extends RegisterPageElementMapper {
         PageFactory.initElements(Browser.getCurrentDriver(), this);
     }
 
+    public String getTextAuthentication(){
+        return authentication.getText();
+    }
+
+    public boolean isCreateAccountPage(){
+        return getTextAuthentication().contains("Authentication");
+    }
+
     public void selectGenderMale(){
         genderMale.click();
     }
@@ -50,8 +58,16 @@ public class RegisterPage extends RegisterPageElementMapper {
         specialOffers.click();
     }
 
+    public void fillCompany(){
+        company.sendKeys("CWI");
+    }
+
     public void fillAddress(){
         address.sendKeys("Rua dos Bobos");
+    }
+
+    public void fillAddressCont(){
+        addressCont.sendKeys("continuação");
     }
 
     public void fillCity(){
@@ -74,9 +90,16 @@ public class RegisterPage extends RegisterPageElementMapper {
         additionalInformation.sendKeys("blabla");
     }
 
+    public void fillPhoneHome(){
+        phone_home.sendKeys("5904804851");
+    }
 
     public void fillPhoneMobile(){
         phone_mobile.sendKeys("9548519818");
+    }
+
+    public void fillAddressAlias(){
+        addresAlias.sendKeys("casa");
     }
 
     public void clickBtnRegister(){

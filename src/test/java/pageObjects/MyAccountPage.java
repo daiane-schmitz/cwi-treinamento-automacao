@@ -6,12 +6,16 @@ import utils.Browser;
 
 public class MyAccountPage extends MyAccountPageMapper {
 
-    MyAccountPage(){
+    public MyAccountPage(){
         PageFactory.initElements(Browser.getCurrentDriver(), this);
 
     }
 
-    public void getMyAccountTitle(){
-        myAccountTitle.getText();
+    public String getTextMyAccount(){
+        return myAccount.getText();
+    }
+
+    public boolean isMyAccountPage(){
+        return getTextMyAccount().equals("My account");
     }
 }

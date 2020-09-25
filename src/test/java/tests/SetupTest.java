@@ -133,6 +133,7 @@ public class SetupTest extends BaseTests {
         HomePage home = new HomePage();
         LoginPage login = new LoginPage();
         RegisterPage register = new RegisterPage();
+        MyAccountPage myAccount = new MyAccountPage();
 
         home.clickBtnLogin();
         System.out.println("Clicou em Sign in e direcionou para a página de login para criar a conta");
@@ -143,9 +144,10 @@ public class SetupTest extends BaseTests {
         login.clickBtnCreateAccount();
         System.out.println("Clicou em Create a Account");
         assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains("http://automationpractice.com/index.php?controller=authentication"));
+        assertTrue(register.isCreateAccountPage());
         System.out.println("Validou que está na página de criar conta");
 
-        //Selecionar o gênero
+        //Selecionar o gênero (fem)
         register.selectGenderFemale();
 
         //Preencher o nome
@@ -168,8 +170,12 @@ public class SetupTest extends BaseTests {
         //Selecionar checkbox para receber ofertas
         register.selectReceiveSpecialOffers();
 
+        //Preencher a compania
+        register.fillCompany();
+
         //Preencher o endereço
         register.fillAddress();
+        register.fillAddressCont();
 
         //Preencher a cidade
         register.fillCity();
@@ -186,15 +192,22 @@ public class SetupTest extends BaseTests {
         //Preencher informações adicionais
         register.fillAdditionalInformation();
 
+        //Preencher o telefone fixo
+        register.fillPhoneHome();
+
         //Preencher o celular
         register.fillPhoneMobile();
+
+        //Preencher apelido para endereço
+        register.fillAddressAlias();
 
         //Clicar em Register
         register.clickBtnRegister();
 
         //Validar quee está na página My Account
         assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains("http://automationpractice.com/index.php?controller=my-account"));
-
+        assertTrue(myAccount.isMyAccountPage());
+        System.out.println("Validou que está na página My Account");
     }
 
 }

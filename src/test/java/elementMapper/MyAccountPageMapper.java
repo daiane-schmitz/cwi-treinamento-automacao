@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class MyAccountPageMapper {
 
-    @FindBy(css = "#center_column > h1")
-    public WebElement myAccountTitle;
+    @FindBy(css = ".clearfix > span.navigation_page")
+    public WebElement myAccount;
 
 }
