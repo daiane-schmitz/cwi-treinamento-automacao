@@ -14,4 +14,5 @@ public class ProductPageElementMapper {
     @FindBy(css = ".button-container a[title='Proceed to checkout']")
     public WebElement buttonProceedToCheckoutModal;
 
+
 }

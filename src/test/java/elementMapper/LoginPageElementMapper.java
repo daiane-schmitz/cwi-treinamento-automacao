@@ -14,4 +14,13 @@ public class LoginPageElementMapper {
     @FindBy(id = "SubmitLogin")
     public WebElement submitLogin;
 
+    @FindBy(id = "email_create")
+    public WebElement emailCreate;
+
+    @FindBy(id = "SubmitCreate")
+    public WebElement btnCreateAccount;
+
+    @FindBy(css = "#account-creation_form > div:nth-child(1) > h3")
+    public WebElement yourPersonalInformation;
+
 }

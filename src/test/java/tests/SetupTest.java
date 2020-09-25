@@ -123,4 +123,65 @@ public class SetupTest extends BaseTests {
 
     }
 
+
+    @Test
+    public void testCreateAccount(){
+        //Abrir a página
+        testOpeningBrowserAndLoadingPage();
+
+        //Iniciar as páginas
+        HomePage home = new HomePage();
+        LoginPage login = new LoginPage();
+        RegisterPage register = new RegisterPage();
+
+        home.clickBtnLogin();
+        System.out.println("Clicou em Sign in e direcionou para a página de login para criar a conta");
+        assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains(Utils.getBaseUrl().concat("index.php?controller=authentication&back=my-account")));
+
+        login.fillEmailCreateAcc();
+        System.out.println("Preencheu o e-mail para criar a conta");
+        login.clickBtnCreateAccount();
+        System.out.println("Clicou em Create a Account");
+        assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains("http://automationpractice.com/index.php?controller=authentication"));
+        System.out.println("Validou que está na página de criar conta");
+
+        //Selecionar o gênero
+        register.selectGenderFemale();
+
+        //Preencher o nome
+        register.fillFirstName();
+
+        //Preencher o sobrenome
+        register.fillLastName();
+
+        //Preencher a senha
+        register.fillPasswd();
+
+        //----------------------------------------------------------------------------------------
+
+        //Preencher o endereço
+        register.fillAddress();
+
+        //Preencher a cidade
+        register.fillCity();
+
+        //Selecionar o estado
+        register.selectState();
+
+        //Preencher o cep
+        register.fillPostcode();
+
+        //Selecionar o país
+        register.selectCountry();
+
+        //Preencher o celular
+        register.fillPhoneMobile();
+
+        //Validar quee está na página My Account
+        assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains("http://automationpractice.com/index.php?controller=my-account"));
+
+    }
+
+
+
 }
