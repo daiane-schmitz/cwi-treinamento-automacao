@@ -20,6 +20,21 @@ public class RegisterPageElementMapper {
     @FindBy(id = "passwd")
     public WebElement passwd;
 
+    @FindBy(css = "#days > option:nth-child(23)")
+    public WebElement dayBirth;
+
+    @FindBy(css = "#months > option:nth-child(5)")
+    public WebElement monthBirth;
+
+    @FindBy(css = "#years > option:nth-child(32)")
+    public WebElement yearBirth;
+
+    @FindBy(id = "newsletter")
+    public WebElement newsletter;
+
+    @FindBy(id = "optin")
+    public WebElement specialOffers;
+
     @FindBy(id = "address1")
     public WebElement address;
 
@@ -38,10 +53,16 @@ public class RegisterPageElementMapper {
     @FindBy(css = "#id_country > option:nth-child(2)")
     public WebElement countryUSA;
 
+    @FindBy(id = "other")
+    public WebElement additionalInformation;
+
     @FindBy(id = "phone")
     public WebElement phone_home;
 
     @FindBy(id = "phone_mobile")
     public WebElement phone_mobile;
+
+    @FindBy(id = "submitAccount")
+    public WebElement btnRegister;
 
 }

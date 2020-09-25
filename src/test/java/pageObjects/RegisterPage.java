@@ -30,6 +30,26 @@ public class RegisterPage extends RegisterPageElementMapper {
         passwd.sendKeys("teste");
     }
 
+    public void selectDayBirth(){
+        dayBirth.click();
+    }
+
+    public void selectMonthBirth(){
+        monthBirth.click();
+    }
+
+    public void selectYearBirth(){
+        yearBirth.click();
+    }
+
+    public void selectSignUpForNewsletter(){
+        newsletter.click();
+    }
+
+    public void selectReceiveSpecialOffers(){
+        specialOffers.click();
+    }
+
     public void fillAddress(){
         address.sendKeys("Rua dos Bobos");
     }
@@ -50,8 +70,16 @@ public class RegisterPage extends RegisterPageElementMapper {
         countryUSA.click();
     }
 
+    public void fillAdditionalInformation(){
+        additionalInformation.sendKeys("blabla");
+    }
+
+
     public void fillPhoneMobile(){
         phone_mobile.sendKeys("9548519818");
     }
 
+    public void clickBtnRegister(){
+        btnRegister.click();
+    }
 }

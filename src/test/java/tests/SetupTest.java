@@ -157,7 +157,16 @@ public class SetupTest extends BaseTests {
         //Preencher a senha
         register.fillPasswd();
 
-        //----------------------------------------------------------------------------------------
+        //Selecionar aniversário
+        register.selectDayBirth();
+        register.selectMonthBirth();
+        register.selectYearBirth();
+
+        //Selecionar checkbox para receber newsletter
+        register.selectSignUpForNewsletter();
+
+        //Selecionar checkbox para receber ofertas
+        register.selectReceiveSpecialOffers();
 
         //Preencher o endereço
         register.fillAddress();
@@ -174,14 +183,18 @@ public class SetupTest extends BaseTests {
         //Selecionar o país
         register.selectCountry();
 
+        //Preencher informações adicionais
+        register.fillAdditionalInformation();
+
         //Preencher o celular
         register.fillPhoneMobile();
+
+        //Clicar em Register
+        register.clickBtnRegister();
 
         //Validar quee está na página My Account
         assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains("http://automationpractice.com/index.php?controller=my-account"));
 
     }
-
-
 
 }
