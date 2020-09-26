@@ -1,6 +1,7 @@
 package tests;
 
 import io.qameta.allure.Feature;
+import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.hamcrest.CoreMatchers;
 import org.junit.Test;
@@ -125,6 +126,7 @@ public class SetupTest extends BaseTests {
 
 
     @Test
+    @Story("Criar conta")
     public void testCreateAccount(){
         //Abrir a página
         testOpeningBrowserAndLoadingPage();
@@ -159,7 +161,7 @@ public class SetupTest extends BaseTests {
         //Preencher a senha
         register.fillPasswd();
 
-        //Selecionar aniversário
+        //Selecionar data de nascimento
         register.selectDayBirth();
         register.selectMonthBirth();
         register.selectYearBirth();
@@ -205,7 +207,7 @@ public class SetupTest extends BaseTests {
         register.clickBtnRegister();
 
         //Validar quee está na página My Account
-        assertTrue(Browser.getCurrentDriver().getCurrentUrl().contains("http://automationpractice.com/index.php?controller=my-account"));
+        assertTrue(Browser.getCurrentDriver().getCurrentUrl().equals("http://automationpractice.com/index.php?controller=my-account"));
         assertTrue(myAccount.isMyAccountPage());
         System.out.println("Validou que está na página My Account");
     }

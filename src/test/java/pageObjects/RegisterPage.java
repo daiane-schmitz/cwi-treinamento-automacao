@@ -2,6 +2,7 @@ package pageObjects;
 
 import elementMapper.RegisterPageElementMapper;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import utils.Browser;
 
 public class RegisterPage extends RegisterPageElementMapper {
@@ -15,7 +16,7 @@ public class RegisterPage extends RegisterPageElementMapper {
     }
 
     public boolean isCreateAccountPage(){
-        return getTextAuthentication().contains("Authentication");
+        return getTextAuthentication().equals("Authentication");
     }
 
     public void selectGenderMale(){
@@ -39,15 +40,18 @@ public class RegisterPage extends RegisterPageElementMapper {
     }
 
     public void selectDayBirth(){
-        dayBirth.click();
+        Select selectStateElement = new Select(dayBirth);
+        selectStateElement.selectByValue("22");
     }
 
     public void selectMonthBirth(){
-        monthBirth.click();
+        Select selectStateElement = new Select(monthBirth);
+        selectStateElement.selectByValue("4");
     }
 
     public void selectYearBirth(){
-        yearBirth.click();
+        Select selectStateElement = new Select(yearBirth);
+        selectStateElement.selectByValue("1990");
     }
 
     public void selectSignUpForNewsletter(){
@@ -75,15 +79,16 @@ public class RegisterPage extends RegisterPageElementMapper {
     }
 
     public void selectState(){
-        stateAlaska.click();
+        Select selectStateElement = new Select(state);
+        selectStateElement.selectByValue("2");
     }
-
     public void fillPostcode(){
         postcode.sendKeys("01234");
     }
 
     public void selectCountry(){
-        countryUSA.click();
+        Select selectStateElement = new Select(country);
+        selectStateElement.selectByValue("21");
     }
 
     public void fillAdditionalInformation(){
@@ -98,8 +103,9 @@ public class RegisterPage extends RegisterPageElementMapper {
         phone_mobile.sendKeys("9548519818");
     }
 
-    public void fillAddressAlias(){
-        addresAlias.sendKeys("casa");
+    public void fillAddressAlias() {
+        addresAlias.clear();
+        addresAlias.sendKeys("Casa");
     }
 
     public void clickBtnRegister(){

@@ -1,7 +1,9 @@
 package elementMapper;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 public class RegisterPageElementMapper {
 
@@ -23,13 +25,13 @@ public class RegisterPageElementMapper {
     @FindBy(id = "passwd")
     public WebElement passwd;
 
-    @FindBy(css = "#days > option:nth-child(23)")
+    @FindBy(id = "days")
     public WebElement dayBirth;
 
-    @FindBy(css = "#months > option:nth-child(5)")
+    @FindBy(id = "months")
     public WebElement monthBirth;
 
-    @FindBy(css = "#years > option:nth-child(32)")
+    @FindBy(id = "years")
     public WebElement yearBirth;
 
     @FindBy(id = "newsletter")
@@ -50,14 +52,14 @@ public class RegisterPageElementMapper {
     @FindBy(id = "city")
     public WebElement city;
 
-    @FindBy(css = "#id_state > option:nth-child(3)")
-    public WebElement stateAlaska;
+    @FindBy(id = "id_state")
+    public WebElement state;
 
     @FindBy(id = "postcode")
     public WebElement postcode;
 
-    @FindBy(css = "#id_country > option:nth-child(2)")
-    public WebElement countryUSA;
+    @FindBy(id = "id_country")
+    public WebElement country;
 
     @FindBy(id = "other")
     public WebElement additionalInformation;
